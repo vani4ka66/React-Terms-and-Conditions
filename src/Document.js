@@ -6,6 +6,21 @@ function Document(props) {
 
     const [isRead, setIsRead] = useState(false)
 
+    // function getScroll(params) {
+    //     let content = document.getElementsByClassName('content')[0];
+
+    //     content.onscroll = function(ev) {
+    //         if ((window.innerHeight + window.scrollY) >= content.offsetHeight) {
+    //             setIsRead(true)
+    //         }
+    //         else{
+    //             setIsRead(false)
+    //         }
+    //     };
+    // }
+
+    // getScroll()
+
     useEffect(() => {
         let content = document.getElementsByClassName('content')[0];
 

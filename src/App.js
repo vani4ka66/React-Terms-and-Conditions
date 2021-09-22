@@ -6,26 +6,22 @@ function App() {
 
   const [value, setValue] = useState('')
 
-  useEffect(async () => {
-
-
-        setValue(await fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')
-        .then(respone => respone.text()))
-      ;
-
-      console.log(value)
+  useEffect(() => {
  
-    
-  //  }
-  });
+        fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt?limit=5')
+        .then(respone => respone.text())
+        .then(data => {
 
+          setValue(data)
 
+        });
 
+  },[]);
 
   return (
     <div className="App">
       <Document title="Terms and Conditions" content={value} />
-      
+
       <section class="hero">
         <div class="hero-body">
           <p class="title">A React Task</p>
