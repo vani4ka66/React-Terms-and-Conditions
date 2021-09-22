@@ -4,21 +4,28 @@ import React, {useEffect, useState} from "react";
 
 function App() {
 
-  // const [value, setValue] = useState()
+  const [value, setValue] = useState()
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   return (fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')).text()
-  // });
+    async function getSampleText() {
+      // return (await fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')).text();
 
-  async function getSampleText() {
-     return (await fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')).text();
+      setValue(await fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')).text();
 
-    // console.log( (await fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')).text() );
+      console.log(value)
+ 
+     // console.log( (await fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')).text() );
+    
+   }
+  });
+
+  // async function getSampleText() {
+  //    return (await fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')).text();
+
    
-  }
+  // }
 
- console.log( getSampleText())
 
   return (
     <div className="App">
