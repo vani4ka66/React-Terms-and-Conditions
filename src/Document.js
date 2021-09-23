@@ -1,51 +1,62 @@
-import App from "./App";
 import './Document.css'
-import React, {useEffect, useState} from "react";
+import React from "react";
+import { Component } from 'react';
 
-function Document(props) {
+export default class Document extends Component {
+    constructor(props){
+        super(props)
 
-    const [isRead, setIsRead] = useState(false)
+        this.state = { isRead : false }
+        this._handleScroll = this._handleScroll.bind(this)
+        
+    }
 
-    // function getScroll(params) {
+    // updateState = () => {
     //     let content = document.getElementsByClassName('content')[0];
 
     //     content.onscroll = function(ev) {
     //         if ((window.innerHeight + window.scrollY) >= content.offsetHeight) {
-    //             setIsRead(true)
+
+    //             this.setState({ isRead : true })
+    //             return this.state
+                
     //         }
     //         else{
-    //             setIsRead(false)
+    //             this.setState({ isRead : false })
+    //             return this.state
+              
     //         }
     //     };
     // }
 
-    // getScroll()
+    // shouldComponentUpdate() {
+    //     return this.state.isRead
+    // }
 
-    useEffect(() => {
-        let content = document.getElementsByClassName('content')[0];
+    _handleScroll = () => {
+       
+        this.setState({
+            isRead: true
+          })
 
-        content.onscroll = function(ev) {
-            if ((window.innerHeight + window.scrollY) >= content.offsetHeight) {
-                setIsRead(true)
-            }
-            else{
-                setIsRead(false)
-            }
-        };
-      });
+           console.log(this.state.isRead)
+    }
 
-    return <div>
-                <div className="title">{props.title}</div>
-                <div className="content container">{props.content}</div>
-                 
-        
+    render(){
+        const {isRead} = this.state
+
+        return <div>
+            <div>{this.isRead}</div>
+                <div className="title">{this.props.title}</div>
+                <div className="content container" onScroll={this._handleScroll}>{this.props.content}</div>
+                        
+                
                 {isRead ?  <button className="allowed" >I agree</button> :
-                           <button  className="notAllowed" >I agree</button> }
-                  
-           </div>
-  }
-  
-  export default Document;
+                    <button  className="notAllowed" >I agree</button> }
+                          
+            </div>
+    }
+}
 
 
 

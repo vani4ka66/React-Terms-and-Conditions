@@ -31,15 +31,6 @@ function App() {
       <div class="container is-fullhd">
         <div class="notification">
           Edit the <code>./src</code> folder to add components.
-          Ne quid vates funera altis generis, suspiria corpore aequoris luebat madidos
- stellas Cephaloque, absensauxilium. Meliore *regis* gelidoque **quoque**, data
- forti, erat postquam **deserit illic**, de posuit hoc habet, prima aures.
- Defluit dumque **mero** ardet suum vestro scrobibus ferarum Apollineos
- Saturnia, excessere lenita lignum; tum quod spina choreas.
-
-Tuentem invenio nigrae, umentia muneris *verecundo de* Argolicae paelex, ambit?
-Ponti quod *poplite* montes vulnera, dura **quid**, in. Minetur accensae;
-viderat prodidit arma, iuppiter mediisque medio, ad armis.
         </div>
       </div>
     </div>
