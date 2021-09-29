@@ -8,7 +8,6 @@ export default function Document(props) {
     const handleScroll = () => {
 
         let content = document.getElementsByClassName('content')[0];
-       console.log(content.offsetHeight)
 
             if ((content.scrollTop + content.offsetHeight) >= content.scrollHeight) {
                 setisRead(true)     
