@@ -14,17 +14,6 @@ export default function Document(props) {
             }
     }
 
-    // let content = document.getElementsByClassName('content')[0];
-
-    // const handleScroll = useCallback(() => {
-
-
-    //     if ((content.scrollTop + content.offsetHeight) >= content.scrollHeight) {
-    //                      setisRead(true)     
-    //                 }
-
-    // }, [content])
-
     return <div>
                 <div className="title">{props.title}</div>
                 <div className="content container" onScroll={handleScroll}>{props.content}</div>   
@@ -33,7 +22,6 @@ export default function Document(props) {
                 <button  className="notAllowed" >I agree</button> }
                               
             </div>
-    
 }
 
 
