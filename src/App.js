@@ -8,13 +8,17 @@ function App() {
 
   useEffect(() => {
  
-        fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')
+       const a =  fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')
         .then(respone => respone.text())
         .then(data => {
 
           setValue(data)
 
         });
+
+        return () => {
+          clearInterval(a)
+        }
 
   },[]);
 
