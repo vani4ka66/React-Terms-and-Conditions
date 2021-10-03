@@ -16,7 +16,7 @@ export default function Document(props) {
 
     return <div>
                 <div className="title">{props.title}</div>
-                <div className="content container" >{props.content}</div>   
+                <div className="content container" onScroll={handleScroll}>{props.content}</div>   
                     
                 {isRead ?  <button className="allowed" >I agree</button> :
                 <button  className="notAllowed" >I agree</button> }
