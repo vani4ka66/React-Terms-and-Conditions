@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
  
        fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')
-        .then(respone => respone.text())
+        .then(response => response.text())
         .then(data => {
 
           setValue(data)
